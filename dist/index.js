@@ -3,23 +3,23 @@ exports.__esModule = true;
 var ecore_1 = require("ecore");
 // Main test
 // Resources contain model elements and are identified by a URI.
-var resourceSet = ecore_1["default"].ResourceSet.create();
+var resourceSet = ecore_1.Ecore.ResourceSet.create();
 var resource = resourceSet.create({ uri: 'model.json' });
 // EClass are used to define domain elements, they are identified
 // by name and a set of structural features (attributes and references).
-var User = ecore_1["default"].EClass.create({
+var User = ecore_1.Ecore.EClass.create({
     name: 'User',
     eStructuralFeatures: [
         // EAttributes are used to define domain elements
         // elements properties.
-        ecore_1["default"].EAttribute.create({
+        ecore_1.Ecore.EAttribute.create({
             name: 'name',
             upperBound: 1,
-            eType: ecore_1["default"].EString
+            eType: ecore_1.Ecore.EString
         }),
         // EReference are used to define links between domain
         // elements.
-        ecore_1["default"].EReference.create({
+        ecore_1.Ecore.EReference.create({
             name: 'friends',
             upperBound: -1,
             containment: false,
@@ -29,7 +29,9 @@ var User = ecore_1["default"].EClass.create({
 });
 // EPackages represent namespaces for a set of EClasses.
 // It's properties name, nsURI and nsPrefix must be set.
-var SamplePackage = ecore_1["default"].EPackage.create({
+var test = ecore_1.Ecore.ResourceSet.create();
+ecore_1.Ecore.EPackage;
+var SamplePackage = ecore_1.Ecore.EPackage.create({
     name: 'sample',
     nsURI: 'http://www.example.org/sample',
     nsPrefix: 'sample',
