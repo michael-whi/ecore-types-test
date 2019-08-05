@@ -34,9 +34,6 @@ let User = Ecore.EClass.create({
 // EPackages represent namespaces for a set of EClasses.
 // It's properties name, nsURI and nsPrefix must be set.
 
-let test:Ecore.ResourceSet = Ecore.ResourceSet.create()
-Ecore.EPackage
-
 let SamplePackage:Ecore.EObject = Ecore.EPackage.create({
     name: 'sample',
     nsURI: 'http://www.example.org/sample',
@@ -67,6 +64,3 @@ export interface SampleDef {
     name: string,
     structuralFeatures: Ecore.EStructuralFeature[],
 }
-
-
-
